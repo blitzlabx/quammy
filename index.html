@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Quammy · Your soft little AI companion</title>
+<meta name="description" id="md" content="Meet Quammy, a sweet, honest and caring AI companion that glows with moods, sparkles when she's happy, and chats like a real friend. Made with love by Blitz." />
+<meta name="theme-color" content="#120a1f" />
+<link rel="canonical" id="cn" href="https://quammy.devs.surf/home" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Quammy" />
+<meta property="og:title" id="ot" content="Quammy · Your soft little AI companion" />
+<meta property="og:description" id="od" content="A sweet, honest and caring AI companion with moods, sparkles and a heart. Made with love by Blitz." />
+<meta property="og:url" id="ou" content="https://quammy.devs.surf/home" />
+<meta property="og:image" content="https://quammy.devs.surf/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Quammy · Your soft little AI companion" />
+<meta name="twitter:description" content="A sweet, honest and caring AI companion with moods, sparkles and a heart." />
+<meta name="twitter:image" content="https://quammy.devs.surf/assets/og.png" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Quammy","url":"https://quammy.devs.surf","description":"A soft, caring AI companion chat.","applicationCategory":"LifestyleApplication","operatingSystem":"Any","creator":{"@type":"Person","name":"Blitz","url":"https://blitz.devs.surf"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/base.css" />
+<link rel="stylesheet" href="/assets/site.css" />
+<link rel="stylesheet" href="/assets/pages.css" />
+</head>
+<body>
+<div class="sky"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<div class="page">
+  <nav>
+    <a class="brand" data-link href="/home" aria-label="Quammy home"><img src="/assets/logo.svg" alt="" />Quammy</a>
+    <div class="nav-r">
+      <a class="btn primary" data-link href="/chat">Chat now</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></button>
+    </div>
+  </nav>
+  <div class="menu" id="menu"></div>
+  <main id="app"></main>
+  <footer id="foot"></footer>
+</div>
+
+<noscript><p style="position:relative;z-index:5;padding:120px 20px;text-align:center">Quammy needs JavaScript to chat. Please turn it on and reload.</p></noscript>
+<script src="/assets/quammy.js"></script>
+<script src="/assets/app.js"></script>
+</body>
+</html>

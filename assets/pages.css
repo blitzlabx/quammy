@@ -1,0 +1,97 @@
+html,body{overflow-x:hidden}
+body.chat-mode{overflow:hidden;height:100%}
+body.chat-mode nav,body.chat-mode footer{display:none}
+#app.pgin{animation:pgin .55s cubic-bezier(.22,1,.36,1)}
+@keyframes pgin{from{opacity:0;transform:translateY(18px)}}
+
+/* Nav: never clips on small phones */
+nav{z-index:60;width:min(1080px,calc(100% - 20px));padding:8px 8px 8px 14px}
+nav .btn{padding:9px 16px;font-size:.88rem;white-space:nowrap}
+.nav-r{gap:8px}
+.menu-btn{width:40px;height:40px;flex-shrink:0;border-radius:50%;border:1px solid var(--line);background:var(--glass);display:grid;place-items:center;cursor:pointer;transition:background .2s}
+.menu-btn:hover{background:rgba(255,255,255,.14)}
+.menu-btn svg{width:20px;height:20px;stroke:var(--cream);fill:none;stroke-width:2;stroke-linecap:round}
+.menu-btn path{transition:transform .3s,opacity .3s;transform-origin:center}
+.menu-btn.x path:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.menu-btn.x path:nth-child(2){opacity:0}
+.menu-btn.x path:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:50;padding:calc(88px + env(safe-area-inset-top)) 14px 28px;background:rgba(15,10,26,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.menu.open{opacity:1;visibility:visible}
+.mgrid{max-width:560px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mi{display:flex;flex-direction:column;gap:3px;padding:14px;border-radius:18px;border:1px solid var(--line);background:var(--glass);text-decoration:none;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s,border-color .2s;transition-delay:calc(var(--i)*.04s)}
+.menu.open .mi{opacity:1;transform:none}
+.mi.on{border-color:rgba(var(--rgb),.65);background:rgba(var(--rgb),.1)}
+.mi svg{width:20px;height:20px;stroke:var(--soft);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:4px}
+.mi b{font-family:'Quicksand',sans-serif}
+.mi small{font-size:.76rem;color:rgba(255,245,248,.6);line-height:1.3}
+
+/* Spacing: keep text off the screen edges */
+.wrap.hero{padding-left:20px;padding-right:20px}
+.pg{padding:112px 0 40px;min-height:72vh}
+.narrow{max-width:720px}
+.pg .head{margin-bottom:30px}
+.center{text-align:center;margin-top:28px}
+.byb{color:var(--soft);font-weight:700;text-decoration:none;border-bottom:1px dashed rgba(var(--rgb),.5)}
+.byb:hover{color:#fff}
+.pill{text-decoration:none}
+.try{display:inline-block;margin:14px 0 0 12px;font-weight:700;font-size:.86rem;color:var(--soft);text-decoration:none}
+.try:hover{color:#fff}
+.panel{padding:22px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));margin-bottom:14px}
+.panel h3{font-family:'Quicksand',sans-serif;margin-bottom:6px;font-size:1.15rem}
+.panel p,.panel li{font-size:.94rem;color:rgba(255,245,248,.74)}
+.panel p+p{margin-top:8px}
+.panel ol,.panel ul{padding-left:20px;display:grid;gap:6px;margin-top:8px}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+
+/* Diary */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stat{padding:16px 8px;border-radius:18px;border:1px solid var(--line);background:var(--glass);text-align:center}
+.stat b{display:block;font-family:'Quicksand',sans-serif;font-size:1.5rem}
+.stat small{font-size:.74rem;color:rgba(255,245,248,.6)}
+.bar{display:grid;grid-template-columns:118px 1fr 26px;align-items:center;gap:10px;font-size:.85rem;margin:10px 0}
+.bar .t{display:flex;align-items:center;gap:8px}
+.bar .tr{height:8px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden}
+.bar .tr i{display:block;height:100%;border-radius:8px;background:var(--c);width:var(--w);animation:grow 1s cubic-bezier(.22,1,.36,1) both}
+@keyframes grow{from{width:0}}
+.tl{display:grid;gap:14px;margin-top:10px}
+.tli{display:flex;gap:12px;align-items:flex-start;font-size:.88rem}
+.tli .dot{margin-top:6px;flex-shrink:0}
+.tli small{display:block;color:rgba(255,245,248,.5);font-size:.72rem}
+
+/* Themes */
+.themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.th{padding:16px;border-radius:20px;border:1px solid var(--line);background:var(--glass);cursor:pointer;text-align:left;transition:transform .25s,border-color .25s,box-shadow .25s}
+.th:hover{transform:translateY(-3px)}
+.th.on{border-color:var(--soft);box-shadow:0 0 30px rgba(var(--a2),.25)}
+.sw{display:flex;margin-bottom:12px}
+.sw i{width:26px;height:26px;border-radius:50%;border:2px solid #1a1028;margin-right:-8px}
+.th b{font-family:'Quicksand',sans-serif;display:block}
+.th small{font-size:.75rem;color:rgba(255,245,248,.6)}
+
+/* FAQ */
+details{border:1px solid var(--line);border-radius:18px;background:var(--glass);margin-bottom:10px;padding:0 16px}
+summary{padding:16px 0;cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';color:var(--soft);font-size:1.3rem;line-height:1;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 16px;font-size:.92rem;color:rgba(255,245,248,.72)}
+
+/* Footer */
+footer .links{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;margin:10px 0 4px}
+footer .links a{margin:0;font-size:.85rem}
+
+/* Mic */
+.mic{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--glass);display:grid;place-items:center;cursor:pointer;flex-shrink:0}
+.mic[hidden]{display:none}
+.mic svg{width:18px;height:18px;stroke:var(--soft);fill:none;stroke-width:1.9;stroke-linecap:round}
+.mic.on{background:rgba(var(--a2),.3);animation:ring 1.2s infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(var(--a2),.5)}100%{box-shadow:0 0 0 12px rgba(var(--a2),0)}}
+
+@media(max-width:560px){
+  .cta .btn{flex:1 1 100%;max-width:340px;justify-content:center}
+  .hero{padding-top:96px;gap:30px}
+  section{padding:56px 0}
+  .band{padding:40px 18px}
+  .bar{grid-template-columns:100px 1fr 24px}
+  .pg{padding-top:100px}
+}
